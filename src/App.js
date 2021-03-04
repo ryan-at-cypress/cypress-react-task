@@ -44,7 +44,7 @@ function App(props) {
     )
   );
 
-  // get lenght of task length
+  // get length of tasks
   const tasksNoun = taskList.length !== 1 ? 'tasks' : 'task';
   const headingText = `${taskList.length} ${tasksNoun} remaining`;
   
