@@ -31,7 +31,7 @@ describe('The form', () => {
     })
 
     // check to see if task can be added via button
-    it.only('creates a task via the add button', () => {
+    it('creates a task via the add button', () => {
         const input = "learn about cypress"
         cy.get('#new-todo-input')
         .type(input)

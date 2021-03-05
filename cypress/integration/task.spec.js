@@ -5,7 +5,7 @@ describe('The form', () => {
         cy.visit('/')
     })
 
-    // check if head text matches active tasks
+    // check if heading text matches active tasks
     it.skip('checks if task count matches active tasks', () => {
         cy.get('[type="checkbox"]')
         .first()
@@ -13,6 +13,11 @@ describe('The form', () => {
         .get('#list-heading')
         .should('contain', '2')
     })
-    
+
+    // check if you can edit task
+    it.only('should edit a task in the list', () => {
+        // add test here
+        
+    });
 
   })
