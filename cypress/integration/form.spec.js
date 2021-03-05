@@ -18,26 +18,30 @@ describe('The form', () => {
         .should('have.value', input)
     })
 
-    // check to see if taks can be added via enter on keyboard
+    // check to see if tasks can be added via enter on keyboard
     it('creates a task via enter on keyboard', () => {
         const input = "learn about cypress"
         cy.get('#new-todo-input')
         .type(input)
         .type('{enter}')
-        .get('li')
-        .should('have.length', 4)
+        .get('ul li:first').within(() => {
+            cy.get('label') // Only yield inputs within list element
+            .should('have.text', input)
+        })
     })
 
     // check to see if task can be added via button
-    it('creates a task via the add button', () => {
+    it.only('creates a task via the add button', () => {
         const input = "learn about cypress"
         cy.get('#new-todo-input')
         .type(input)
         .get('#add_task')
         .click()
-        .get('li')
-        .should('have.length', 4)
+        .get('ul li:first').within(() => {
+            cy.get('label') // Only yield inputs within list element
+            .should('have.text', input)
+        })
     })
-    
+
 
   })

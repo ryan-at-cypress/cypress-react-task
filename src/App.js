@@ -7,7 +7,12 @@ function App(props) {
 
   function addTask(name) {
     const newTask = { id: "todo-" + nanoid(), name: name, completed: false };
-    setTasks([...tasks, newTask]);
+    let a = tasks.slice();
+    a.unshift(newTask);
+    console.log(a);
+    setTasks(a);
+    // setTasks({arr: a});
+    // setTasks([...tasks, newTask]);
   }
 
   function deleteTask(id) {
