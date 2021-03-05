@@ -7,7 +7,7 @@ describe('The form', () => {
 
     // check to see if the input is focused
     it('it focuses on the input', () => {
-      cy.focused().should('have.class', 'input input__lg22')
+      cy.focused().should('have.class', 'input input__lg')
     })
 
     // check to see if input can be entered
@@ -18,13 +18,23 @@ describe('The form', () => {
         .should('have.value', input)
     })
 
-    // check to see if taks can be added
-    // TODO: 
-    it.only('creates a task', () => {
+    // check to see if taks can be added via enter on keyboard
+    it('creates a task via enter on keyboard', () => {
         const input = "learn about cypress"
         cy.get('#new-todo-input')
         .type(input)
         .type('{enter}')
+        .get('li')
+        .should('have.length', 4)
+    })
+
+    // check to see if task can be added via button
+    it('creates a task via the add button', () => {
+        const input = "learn about cypress"
+        cy.get('#new-todo-input')
+        .type(input)
+        .get('#add_task')
+        .click()
         .get('li')
         .should('have.length', 4)
     })
