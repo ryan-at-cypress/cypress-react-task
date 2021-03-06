@@ -6,9 +6,9 @@ import reportWebVitals from './reportWebVitals';
 
 // An arrary of objects to represent our initial todos
 const DATA = [
-  { id: "todo-0", name: "Eat", completed: true },
-  { id: "todo-1", name: "Sleep", completed: false },
-  { id: "todo-2", name: "Repeat", completed: false }
+  { id: "todo-0", name: "Learn cypress", completed: false },
+  { id: "todo-1", name: "Drink coffee", completed: false },
+  { id: "todo-2", name: "Push code", completed: false }
 ];
 
 ReactDOM.render(

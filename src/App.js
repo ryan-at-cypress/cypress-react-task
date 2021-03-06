@@ -44,6 +44,24 @@ function App(props) {
     });
     setTasks(updatedTasks);
   }
+  
+  function getActiveTaskCount(params) {
+    let activeTasks = 0;
+    // return activeTasks;
+
+    // loop through tasks
+    // count completed
+
+    let a = tasks.slice();
+    let aLength = a.length;
+    for (let i = 0; i < aLength; i++) {
+        console.log(a[i]);
+        if (a[i].completed == false) {
+          activeTasks++;
+        }
+    }
+    return activeTasks;
+  }
 
   const [tasks, setTasks] = useState(props.tasks);
   
@@ -63,7 +81,8 @@ function App(props) {
 
   // get length of tasks
   const tasksNoun = taskList.length !== 1 ? 'tasks' : 'task';
-  const headingText = `${taskList.length} ${tasksNoun} remaining`;
+  // const headingText = `${taskList.length} ${tasksNoun} remaining`;
+  const headingText = `${getActiveTaskCount()} ${tasksNoun} remaining`;
   
   return (
     <div className="todoapp stack-large">
