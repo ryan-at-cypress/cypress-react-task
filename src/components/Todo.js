@@ -47,6 +47,13 @@ export default function Todo(props) {
           Save
           <span className="visually-hidden">new name for {props.name}</span>
         </button>
+        <button
+            type="button"
+            className="btn btn__danger"
+            onClick={() => props.deleteTask(props.id)}
+          >
+            Delete <span className="visually-hidden">{props.name}</span>
+          </button>
       </div>
     </form>
   );
@@ -59,21 +66,9 @@ export default function Todo(props) {
             defaultChecked={props.completed}
             onChange={() => props.toggleTaskCompleted(props.id)}
           />
-          <label className="todo-label" htmlFor={props.id}>
+          <label className="todo-label" htmlFor={props.id} onClick={() => setEditing(true)}>
             {props.name}
           </label>
-        </div>
-        <div className="btn-group">
-          <button type="button" className="btn" onClick={() => setEditing(true)}>
-            Edit <span className="visually-hidden">{props.name}</span>
-          </button>
-          <button
-            type="button"
-            className="btn btn__danger"
-            onClick={() => props.deleteTask(props.id)}
-          >
-            Delete <span className="visually-hidden">{props.name}</span>
-          </button>
         </div>
     </div>
   );
