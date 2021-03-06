@@ -1,7 +1,12 @@
 import React, { useState } from "react";
+
 import Form from "./components/Form";
 import Todo from "./components/Todo";
 import { nanoid } from "nanoid";
+
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 
 function App(props) {
 
@@ -79,24 +84,29 @@ function App(props) {
     )
   );
 
-  // get number of active tasks
+  // get number of active tasks for heading text
   let activeTaskCount = getActiveTaskCount();
   const tasksNoun = activeTaskCount!== 1 ? 'tasks' : 'task';
-  // const headingText = `${taskList.length} ${tasksNoun} remaining`;
   const headingText = `${activeTaskCount} ${tasksNoun} remaining`;
   
   return (
-    <div className="todoapp stack-large">
-      <Form addTask={addTask} />
-      <h2 id="list-heading">{headingText}</h2>
-      <ul
-        // role="list"
-        className="todo-list stack-large stack-exception"
-        aria-labelledby="list-heading"
-      >
-        {taskList}
-      </ul>
-    </div>
+    <Container className="p-5">
+      <Row className="justify-content-md-center">
+      <div className="todoapp stack-large">
+        <Jumbotron>
+          <Form addTask={addTask} />
+          <h2 id="list-heading">{headingText}</h2>
+          <ul
+            // role="list"
+            className="todo-list stack-large stack-exception"
+            aria-labelledby="list-heading"
+          >
+            {taskList}
+          </ul>
+        </Jumbotron>
+      </div>
+      </Row>
+    </Container>
   );
 }
 

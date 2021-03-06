@@ -16,7 +16,7 @@ describe('The task list', () => {
     })
 
     // check if you can edit task
-    it('check if you can edit a task in the list', () => {
+    it.skip('check if you can edit a task in the list', () => {
         const input = "a recently edited task"
         /* ==== Generated with Cypress Studio ==== */
         cy.get(':nth-child(2) > .stack-small > .btn-group > :nth-child(1)').click();
