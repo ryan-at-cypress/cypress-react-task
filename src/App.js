@@ -94,6 +94,7 @@ function App(props) {
       <Row className="justify-content-md-center">
       <div className="todoapp stack-large">
         <Jumbotron>
+        <Container fluid className="p-4">
           <Form addTask={addTask} />
           <h2 id="list-heading">{headingText}</h2>
           <ul
@@ -103,6 +104,7 @@ function App(props) {
           >
             {taskList}
           </ul>
+          </Container>
         </Jumbotron>
       </div>
       </Row>
