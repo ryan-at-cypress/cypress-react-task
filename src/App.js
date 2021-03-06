@@ -79,10 +79,11 @@ function App(props) {
     )
   );
 
-  // get length of tasks
-  const tasksNoun = taskList.length !== 1 ? 'tasks' : 'task';
+  // get number of active tasks
+  let activeTaskCount = getActiveTaskCount();
+  const tasksNoun = activeTaskCount!== 1 ? 'tasks' : 'task';
   // const headingText = `${taskList.length} ${tasksNoun} remaining`;
-  const headingText = `${getActiveTaskCount()} ${tasksNoun} remaining`;
+  const headingText = `${activeTaskCount} ${tasksNoun} remaining`;
   
   return (
     <div className="todoapp stack-large">
