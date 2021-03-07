@@ -9,8 +9,14 @@ function Form(props) {
   // TODO: add some verification for valid input
   function handleSubmit(e) {
     e.preventDefault();
-    props.addTask(name);
-    setName("");
+    if (name != ''){
+      props.addTask(name);
+      setName("");
+    }
+    else {
+      alert('Please enter a task!');
+    }
+
   }
 
   // get user input text, set in <input> attribute
