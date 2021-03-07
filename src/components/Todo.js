@@ -5,7 +5,7 @@ export default function Todo(props) {
   // isEditing state is used for conditional rendoring in the return statement
   const [isEditing, setEditing] = useState(false);
   // state for editing task name
-  const [newName, setNewName] = useState('');
+  const [newName, setNewName] = useState(props.name);
 
   function handleChange(e) {
     setNewName(e.target.value);
@@ -20,41 +20,52 @@ export default function Todo(props) {
     setEditing(false);
   }
 
+  // Added this function for additional handlers
+  function handleLabelClick() {
+    setEditing(true);
+  }
+
   const editingTemplate = (
     <form className="stack-small" onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label className="todo-label" htmlFor={props.id}>
-          New name for {props.name}
-        </label>
+      <div className="c-cb">
+          <input
+            id={props.id}
+            type="checkbox"
+            defaultChecked={props.completed}
+            onChange={() => props.toggleTaskCompleted(props.id)}
+          />
         <input
-          id={props.id}
+          id={'text-input' + props.id}
           className="todo-text"
           type="text"
           value={newName}
           onChange={handleChange}
+          autoFocus={true}
         />
-      </div>
-      <div className="btn-group">
-        <button
-          type="button"
-          className="btn todo-cancel"
-          onClick={() => setEditing(false)}
-        >
-          Cancel
-          <span className="visually-hidden">renaming {props.name}</span>
-        </button>
-        <button type="submit" className="btn btn__primary todo-edit">
-          Save
-          <span className="visually-hidden">new name for {props.name}</span>
-        </button>
-        <button
+        </div>
+        
+        <div className="btn-group">
+          <button
             type="button"
-            className="btn btn__danger"
-            onClick={() => props.deleteTask(props.id)}
+            className="btn todo-cancel"
+            onClick={() => setEditing(false)}
           >
-            Delete <span className="visually-hidden">{props.name}</span>
+            Cancel
+            <span className="visually-hidden">renaming {props.name}</span>
           </button>
-      </div>
+          <button type="submit" className="btn btn__primary todo-edit">
+            Save
+            <span className="visually-hidden">new name for {props.name}</span>
+          </button>
+          <button
+              type="button"
+              className="btn btn__danger"
+              onClick={() => props.deleteTask(props.id)}
+            >
+              Delete <span className="visually-hidden">{props.name}</span>
+            </button>
+        </div>
+
     </form>
   );
   const viewTemplate = (
@@ -66,7 +77,7 @@ export default function Todo(props) {
             defaultChecked={props.completed}
             onChange={() => props.toggleTaskCompleted(props.id)}
           />
-          <label className="todo-label" htmlFor={props.id} onClick={() => setEditing(true)}>
+          <label className="todo-label" htmlFor={props.id} onClick={() => handleLabelClick()}>
             {props.name}
           </label>
         </div>

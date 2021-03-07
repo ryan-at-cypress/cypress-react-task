@@ -16,7 +16,7 @@ describe('The task list', () => {
     })
 
     // check if you can edit task
-    it.skip('check if you can edit a task in the list', () => {
+    it.skip('check if you can edit a task in the list with template', () => {
         const input = "a recently edited task"
         /* ==== Generated with Cypress Studio ==== */
         cy.get(':nth-child(2) > .stack-small > .btn-group > :nth-child(1)').click();
@@ -25,6 +25,12 @@ describe('The task list', () => {
         cy.get(':nth-child(2) > .stack-small > .c-cb > .todo-label')
         /* ==== End Cypress Studio ==== */
         .should('have.text', input)
+    });
+
+    // check if you can edit task
+    it.only('check if you can edit a task inline', () => {
+        const input = "a recently edited task"
+        
     });
 
   })

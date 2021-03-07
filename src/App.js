@@ -60,8 +60,7 @@ function App(props) {
     let a = tasks.slice();
     let aLength = a.length;
     for (let i = 0; i < aLength; i++) {
-        console.log(a[i]);
-        if (a[i].completed == false) {
+        if (a[i].completed === false) {
           activeTasks++;
         }
     }
