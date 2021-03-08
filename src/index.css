@@ -18,6 +18,7 @@ white-space: nowrap;
     margin-left: 10px;
     cursor: pointer;
     border: solid;
+    border-radius: 4px;
     width:90%;
 }
 
@@ -31,4 +32,12 @@ input[type=checkbox] {
 
 #add_task {
     margin-top: 10px;
+}
+
+.btn-group {
+    margin: 10px;
+}
+
+.todo-btn {
+    margin: 10px;
 }

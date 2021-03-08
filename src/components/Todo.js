@@ -56,20 +56,26 @@ export default function Todo(props) {
         
         <div className="btn-group">
           <Button
+            variant="secondary"
             type="button"
-            className="btn todo-cancel"
+            className="todo-btn todo-cancel"
             onClick={() => setEditing(false)}
           >
             Cancel
             <span className="visually-hidden">renaming {props.name}</span>
           </Button>
-          <Button type="submit" className="btn btn__primary todo-edit">
+          <Button 
+            variant="primary"
+            size="sm" 
+            type="submit"  
+            className="todo-btn btn__primary todo-edit">
             Save
             <span className="visually-hidden">new name for {props.name}</span>
           </Button>
           <Button
+              variant="danger"
               type="button"
-              className="btn btn__danger"
+              className="todo-btn btn__danger"
               onClick={() => props.deleteTask(props.id)}
             >
               Delete <span className="visually-hidden">{props.name}</span>
@@ -79,21 +85,19 @@ export default function Todo(props) {
     </Form>
   );
   const viewTemplate = (
-    <Form>
     <div className="stack-small">
       <div className="c-cb">
-          <Form.Check
+          <input
             id={props.id}
             type="checkbox"
             defaultChecked={props.completed}
             onChange={() => props.toggleTaskCompleted(props.id)}
           />
-          <Form.Label className="todo-label" data-cy="todo-label" htmlFor={props.id} onClick={() => handleLabelClick()}>
+          <label className="todo-label" data-cy="todo-label" htmlFor={props.id} onClick={() => handleLabelClick()}>
             {props.name}
-          </Form.Label>
+          </label>
         </div>
     </div>
-    </Form>
   );
 
    // isEditing is set by onClick in the edit button
