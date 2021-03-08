@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import Form from "./components/Form";
+import AddTodo from "./components/AddTodo";
 import Todo from "./components/Todo";
 import { nanoid } from "nanoid";
 
@@ -38,7 +38,7 @@ function App(props) {
   }  
 
   function toggleTaskCompleted(id) {
-    const updatedTasks = tasks.map(task => {
+    let updatedTasks = tasks.map(task => {
       // if this task has the same ID as the edited task
       if (id === task.id) {
         // use object spread to make a new object
@@ -47,6 +47,23 @@ function App(props) {
       }
       return task;
     });
+
+    let a = updatedTasks.slice();
+    updatedTasks.forEach((task) => {
+      if (task.completed === true) {
+          a.push(a.splice(a.indexOf(task), 1)[0]);
+        }
+      });
+
+  updatedTasks = a;
+
+    // // move task to end
+    // let a = tasks.slice();
+    // a.push(a.splice(a.indexOf(task), 1)[0]);
+    // console.log(a);
+    // setTasks(a);
+    // console.log(tasks);
+
     setTasks(updatedTasks);
   }
   
@@ -94,7 +111,7 @@ function App(props) {
       <div className="todoapp stack-large">
         <Jumbotron>
         <Container fluid className="p-4">
-          <Form addTask={addTask} />
+          <AddTodo addTask={addTask} />
           <h2 id="list-heading">{headingText}</h2>
           <ul
             // role="list"

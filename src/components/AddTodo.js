@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 
-function Form(props) {
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+
+function AddTodo(props) {
   // sets initial name, defines function to modify name, array destructoring for name and setName
   const [name, setName] = useState('');
 
@@ -9,13 +12,14 @@ function Form(props) {
   // TODO: add some verification for valid input
   function handleSubmit(e) {
     e.preventDefault();
-    if (name != ''){
+    if (name !== ''){
       props.addTask(name);
       setName("");
     }
     else {
       alert('Please enter a task!');
     }
+    
 
   }
 
@@ -25,15 +29,16 @@ function Form(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <h2 className="label-wrapper">
         <label htmlFor="new-todo-input" className="label__lg">
           My Task Manager
         </label>
       </h2>
-      <input
+      <Form.Control
         type="text"
         id="new-todo-input"
+        data-cy="new-todo-input"
         className="input input__lg"
         name="text"
         autoComplete="off"
@@ -41,11 +46,13 @@ function Form(props) {
         value={name}
         onChange={handleChange}
       />
-      <button type="submit" className="btn btn__primary btn__lg" id="add_task">
+      <div>
+      <Button type="submit" className="btn btn__primary btn-block" id="add_task">
         Add
-      </button>
-    </form>
+      </Button>
+      </div>
+    </Form>
   );
 }
 
-export default Form;
+export default AddTodo;

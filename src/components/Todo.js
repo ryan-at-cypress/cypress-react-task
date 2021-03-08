@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+
 export default function Todo(props) {
 
   // isEditing state is used for conditional rendoring in the return statement
@@ -15,7 +18,7 @@ export default function Todo(props) {
   // newName and the todo id is passed to editTask function in App.js
   function handleSubmit(e) {
     e.preventDefault();
-    if (newName != ''){
+    if (newName !== ''){
       props.editTask(props.id, newName);
       setEditing(false);
     }
@@ -32,7 +35,7 @@ export default function Todo(props) {
   }
 
   const editingTemplate = (
-    <form className="stack-small" onSubmit={handleSubmit}>
+    <Form className="stack-small" onSubmit={handleSubmit}>
       <div className="c-cb">
           <input
             id={props.id}
@@ -52,43 +55,45 @@ export default function Todo(props) {
         </div>
         
         <div className="btn-group">
-          <button
+          <Button
             type="button"
             className="btn todo-cancel"
             onClick={() => setEditing(false)}
           >
             Cancel
             <span className="visually-hidden">renaming {props.name}</span>
-          </button>
-          <button type="submit" className="btn btn__primary todo-edit">
+          </Button>
+          <Button type="submit" className="btn btn__primary todo-edit">
             Save
             <span className="visually-hidden">new name for {props.name}</span>
-          </button>
-          <button
+          </Button>
+          <Button
               type="button"
               className="btn btn__danger"
               onClick={() => props.deleteTask(props.id)}
             >
               Delete <span className="visually-hidden">{props.name}</span>
-            </button>
+            </Button>
         </div>
 
-    </form>
+    </Form>
   );
   const viewTemplate = (
+    <Form>
     <div className="stack-small">
       <div className="c-cb">
-          <input
+          <Form.Check
             id={props.id}
             type="checkbox"
             defaultChecked={props.completed}
             onChange={() => props.toggleTaskCompleted(props.id)}
           />
-          <label className="todo-label" data-cy="todo-label" htmlFor={props.id} onClick={() => handleLabelClick()}>
+          <Form.Label className="todo-label" data-cy="todo-label" htmlFor={props.id} onClick={() => handleLabelClick()}>
             {props.name}
-          </label>
+          </Form.Label>
         </div>
     </div>
+    </Form>
   );
 
    // isEditing is set by onClick in the edit button
