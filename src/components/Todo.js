@@ -37,6 +37,7 @@ export default function Todo(props) {
         <input
           id={'text-input' + props.id}
           className="todo-text"
+          data-cy="todo-text"
           type="text"
           value={newName}
           onChange={handleChange}
@@ -77,7 +78,7 @@ export default function Todo(props) {
             defaultChecked={props.completed}
             onChange={() => props.toggleTaskCompleted(props.id)}
           />
-          <label className="todo-label" htmlFor={props.id} onClick={() => handleLabelClick()}>
+          <label className="todo-label" data-cy="todo-label" htmlFor={props.id} onClick={() => handleLabelClick()}>
             {props.name}
           </label>
         </div>

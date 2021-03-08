@@ -16,21 +16,17 @@ describe('The task list', () => {
     })
 
     // check if you can edit task
-    it.skip('check if you can edit a task in the list with template', () => {
-        const input = "a recently edited task"
-        /* ==== Generated with Cypress Studio ==== */
-        cy.get(':nth-child(2) > .stack-small > .btn-group > :nth-child(1)').click();
-        cy.get('#todo-1').type(input);
-        cy.get('.btn-group > .btn__primary').click();
-        cy.get(':nth-child(2) > .stack-small > .c-cb > .todo-label')
-        /* ==== End Cypress Studio ==== */
-        .should('have.text', input)
-    });
-
-    // check if you can edit task
     it.only('check if you can edit a task inline', () => {
         const input = "a recently edited task"
-        
+        cy.get('[data-cy=todo-label]')
+        .first()
+        .click()
+        .get('[data-cy=todo-text]')
+        .clear()
+        .type(input + '{enter}')
+        .get('[data-cy=todo-label]')
+        .first()
+        .should('have.text', input)
     });
 
   })
