@@ -15,9 +15,15 @@ export default function Todo(props) {
   // newName and the todo id is passed to editTask function in App.js
   function handleSubmit(e) {
     e.preventDefault();
-    props.editTask(props.id, newName);
-    setNewName("");
-    setEditing(false);
+    if (newName != ''){
+      props.editTask(props.id, newName);
+      setEditing(false);
+    }
+    else {
+      alert('Please enter a task!');
+      // TODO: refocus on input
+    }
+ 
   }
 
   // Added this function for additional handlers
