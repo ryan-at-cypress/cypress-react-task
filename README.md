@@ -1,6 +1,20 @@
-# Getting Started with Create React App
+## cypress-react-task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple todo list app for testing Cypress Test Runner, Cypress Dashboard, and CircleCI.
+
+The project is built with react and bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+### User stories 
+
+As a user, you can:
+  - Read a list of tasks
+  - Toggle a task as completed or uncompleted
+  - Add new tasks to the list
+  - Edit and delete existing tasks
+
+Features:
+  - Edit tasks inline
+  - Task list is auto-sorted based on task status
 
 ## Available Scripts
 

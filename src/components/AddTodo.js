@@ -33,7 +33,7 @@ function AddTodo(props) {
       <div className="header-text">
         <h2 className="label-wrapper">
           <label htmlFor="new-todo-input" className="label__lg">
-            My Task Manager
+            What should we get done?
           </label>
         </h2>
       </div>
