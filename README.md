@@ -36,7 +36,7 @@ You will also see any lint errors in the console.
 
 Launches the Cypress test runner. For details see [here] (https://docs.cypress.io/guides/core-concepts/test-runner.html#Overview)
 
-### `npm run cypress:open`
+### `npm run deploy`
 
 Deploys to the configured location. The default is to GitHub Pages.
 
