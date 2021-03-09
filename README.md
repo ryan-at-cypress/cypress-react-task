@@ -4,7 +4,8 @@ A simple todo list app for testing Cypress Test Runner, Cypress Dashboard, and C
 
 The project is built with react and bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![image](https://user-images.githubusercontent.com/41104519/110528340-0a629b80-80e6-11eb-851a-ba0669b76f04.png)
+![image](https://user-images.githubusercontent.com/41104519/110530390-60d0d980-80e8-11eb-849d-ec13732b0eb6.png)
+
 
 ### User stories 
 
