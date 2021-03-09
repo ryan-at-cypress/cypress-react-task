@@ -34,7 +34,7 @@ You will also see any lint errors in the console.
 
 ### `npm run cypress:open`
 
-Launches the Cypress test runner. For details see [here] (https://docs.cypress.io/guides/core-concepts/test-runner.html#Overview)
+Launches the Cypress test runner. For details see [here](https://docs.cypress.io/guides/core-concepts/test-runner.html#Overview)
 
 ### `npm run deploy`
 
