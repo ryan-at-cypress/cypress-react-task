@@ -2,7 +2,7 @@
 
 A simple todo list app for testing Cypress Test Runner, Cypress Dashboard, and CircleCI.
 
-You can see the app in action on GitHub Pages: https://ryan-dan-coleman.github.io/cypress-react-task
+You can see the app in action here: https://ryan-dan-coleman.github.io/cypress-react-task
 
 ![image](https://user-images.githubusercontent.com/41104519/110530390-60d0d980-80e8-11eb-849d-ec13732b0eb6.png)
 
@@ -38,7 +38,7 @@ Launches the Cypress test runner. For details see [here] (https://docs.cypress.i
 
 ### `npm run cypress:open`
 
-Deploys to this configured location. The default is to github pages.
+Deploys to the configured location. The default is to GitHub Pages.
 
 ### `npm run build`
 
