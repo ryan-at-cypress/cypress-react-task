@@ -30,11 +30,13 @@ function AddTodo(props) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="label-wrapper">
-        <label htmlFor="new-todo-input" className="label__lg">
-          My Task Manager
-        </label>
-      </h2>
+      <div className="header-text">
+        <h2 className="label-wrapper">
+          <label htmlFor="new-todo-input" className="label__lg">
+            My Task Manager
+          </label>
+        </h2>
+      </div>
       <Form.Control
         type="text"
         id="new-todo-input"
@@ -48,7 +50,7 @@ function AddTodo(props) {
       />
       <div>
       <Button type="submit" className="btn btn__primary btn-block" id="add_task">
-        Add
+        Add Task
       </Button>
       </div>
     </Form>

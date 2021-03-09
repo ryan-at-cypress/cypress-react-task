@@ -19,7 +19,7 @@ white-space: nowrap;
     cursor: pointer;
     border: solid;
     border-radius: 4px;
-    width:90%;
+    width: 90%;
 }
 
 .jumbotron {
@@ -40,4 +40,8 @@ input[type=checkbox] {
 
 .todo-btn {
     margin: 10px;
+}
+
+.header-text {
+    text-align: center;
 }

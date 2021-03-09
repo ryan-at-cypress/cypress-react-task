@@ -7,6 +7,7 @@ import { nanoid } from "nanoid";
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function App(props) {
 
@@ -108,21 +109,23 @@ function App(props) {
   return (
     <Container className="p-5">
       <Row className="justify-content-md-center">
-      <div className="todoapp stack-large">
-        <Jumbotron>
-        <Container fluid className="p-4">
-          <AddTodo addTask={addTask} />
-          <h2 id="list-heading">{headingText}</h2>
-          <ul
-            // role="list"
-            className="todo-list stack-large stack-exception"
-            aria-labelledby="list-heading"
-          >
-            {taskList}
-          </ul>
-          </Container>
-        </Jumbotron>
-      </div>
+      <Col xs={6}>
+          <div className="todoapp stack-large">
+            <Jumbotron>
+              <Container fluid className="p-4">
+                <AddTodo addTask={addTask} />
+                <h2 id="list-heading">{headingText}</h2>
+                <ul
+                  // role="list"
+                  className="todo-list stack-large stack-exception"
+                  aria-labelledby="list-heading"
+                >
+                  {taskList}
+                </ul>
+              </Container>
+            </Jumbotron>
+          </div>
+        </Col>
       </Row>
     </Container>
   );
