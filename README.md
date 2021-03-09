@@ -1,4 +1,4 @@
-## cypress-react-task
+# cypress-react-task
 
 A simple todo list app for testing Cypress Test Runner, Cypress Dashboard, and CircleCI.
 
