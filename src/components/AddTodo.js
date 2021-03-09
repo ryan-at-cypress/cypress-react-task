@@ -1,26 +1,22 @@
 import React, { useState } from "react";
 
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 function AddTodo(props) {
   // sets initial name, defines function to modify name, array destructoring for name and setName
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
 
   // overrides default function of onSubmit, set in <form> attribute
   // calls addTask in app.js, to set the name of the task
-  // TODO: add some verification for valid input
   function handleSubmit(e) {
     e.preventDefault();
-    if (name !== ''){
+    if (name !== "") {
       props.addTask(name);
       setName("");
+    } else {
+      alert("Please enter a task!");
     }
-    else {
-      alert('Please enter a task!');
-    }
-    
-
   }
 
   // get user input text, set in <input> attribute
@@ -49,9 +45,13 @@ function AddTodo(props) {
         onChange={handleChange}
       />
       <div>
-      <Button type="submit" className="btn btn__primary btn-block" id="add_task">
-        Add Task
-      </Button>
+        <Button
+          type="submit"
+          className="btn btn__primary btn-block"
+          id="add_task"
+        >
+          Add Task
+        </Button>
       </div>
     </Form>
   );
