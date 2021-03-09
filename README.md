@@ -14,7 +14,7 @@ As a user, you can:
 
 Features:
   - Edit tasks inline
-  - Task list is auto-sorted based on task status
+  - Task list is auto-sorted based on completed status
 
 ## Available Scripts
 
