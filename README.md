@@ -38,7 +38,7 @@ Launches the Cypress test runner. For details see [here] (https://docs.cypress.i
 
 ### `npm run deploy`
 
-Deploys to the configured location. The default is to GitHub Pages.
+Deploys to the location configured in package.json.
 
 ### `npm run build`
 
