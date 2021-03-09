@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/cypress-react-task/static/css/main.4e5971f2.chunk.css",
-    "main.js": "/cypress-react-task/static/js/main.6a2b4ba1.chunk.js",
-    "main.js.map": "/cypress-react-task/static/js/main.6a2b4ba1.chunk.js.map",
+    "main.js": "/cypress-react-task/static/js/main.889ba230.chunk.js",
+    "main.js.map": "/cypress-react-task/static/js/main.889ba230.chunk.js.map",
     "runtime-main.js": "/cypress-react-task/static/js/runtime-main.27fa122a.js",
     "runtime-main.js.map": "/cypress-react-task/static/js/runtime-main.27fa122a.js.map",
     "static/css/2.150d169a.chunk.css": "/cypress-react-task/static/css/2.150d169a.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.150d169a.chunk.css",
     "static/js/2.12316459.chunk.js",
     "static/css/main.4e5971f2.chunk.css",
-    "static/js/main.6a2b4ba1.chunk.js"
+    "static/js/main.889ba230.chunk.js"
   ]
 }
