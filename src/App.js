@@ -20,7 +20,7 @@ function App(props) {
   }
 
   function deleteTask(id) {
-    // returns array of tasks not equal to the deleted id
+    // returns array of tasks not equal to the deleted id.
     const remainingTasks = tasks.filter((task) => id !== task.id);
     setTasks(remainingTasks);
   }
