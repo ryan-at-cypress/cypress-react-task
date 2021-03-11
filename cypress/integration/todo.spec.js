@@ -16,7 +16,7 @@ describe('The task list', () => {
     })
 
     // check if you can edit task
-    it.only('check if you can edit a task inline', () => {
+    it('check if you can edit a task inline', () => {
         const input = "a recently edited task"
         cy.get('[data-cy=todo-label]')
         .first()
@@ -27,6 +27,17 @@ describe('The task list', () => {
         .get('[data-cy=todo-label]')
         .first()
         .should('have.text', input)
+    });
+
+    
+    it('checks if you can delete a task', () => {
+        cy.get('[data-cy=todo-label]')
+        .first()
+        .click()
+        .get('[data-cy=todo-btn-delete]')
+        .click()
+        .get('#list-heading')
+        .should('contain', '2')
     });
 
   })
